@@ -11,6 +11,21 @@
 </head>
 
 <body>
+<div id="imageContainer">
+    <img src="image1.jpg" alt="Image 1" id="image1" onclick="swapImage('image2.jpg', 'New Caption 2')">
+    <img src="image2.jpg" alt="Image 2" id="image2" onclick="swapImage('image1.jpg', 'New Caption 1')">
+</div>
+
+<p id="caption">Initial Caption</p>
+
+	<script>
+    function swapImage(imageSrc, caption) {
+        document.getElementById("imageContainer").getElementsByTagName("img")[0].src = imageSrc;
+        document.getElementById("caption").innerHTML = caption;
+    }
+</script>
+
+	
 	<header> <img src="images/town_hall_logo.gif" alt="Town Hall logo" height="80">
     	<h2>San Joaquin Valley Town Hall</h2>
     	<h3>Celebrating our <span class="shadow">75<sup>th</sup></span> Year</h3>
@@ -49,7 +64,14 @@
 		</section>
 	</main>
 	<footer>
-  		<p>&copy; 2016, San Joaquin Valley Town Hall, Fresno, CA 93755</p>
+  		<p>&copy; 2024, San Joaquin Valley Town Hall, Fresno, CA 93755</p>
 	</footer>
+
+	<script>
+    // Get the current year
+    var currentYear = new Date().getFullYear();
+    // Update the content of the span element with id "currentYear"
+    document.getElementById("currentYear").innerHTML = currentYear;
+</script>
 </body>
 </html>
